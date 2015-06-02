@@ -357,6 +357,11 @@ static void bdi_wb_shutdown(struct backing_dev_info *bdi)
 	if (!bdi_cap_writeback_dirty(bdi))
 		return;
 
+	/* Make sure nobody queues further work */
+	spin_lock_bh(&bdi->wb_lock);
+	clear_bit(BDI_registered, &bdi->state);
+	spin_unlock_bh(&bdi->wb_lock);
+
 	/*
 	 * Make sure nobody finds us on the bdi_list anymore
 	 */
