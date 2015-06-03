@@ -486,7 +486,7 @@ static struct task_struct *select_bad_process(unsigned int *ppoints,
 			chosen = p;
 			chosen_points = points;
 		}
-	}
+	} while_each_thread(g, p);
 
 	if (chosen)
 	{
