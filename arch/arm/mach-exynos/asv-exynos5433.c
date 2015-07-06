@@ -32,9 +32,9 @@
 #include <plat/pm.h>
 
 #define ARM_ASV_GRP_NR			(16)
-#define ARM_MAX_VOLT			(1312500)
+#define ARM_MAX_VOLT			(1350000)
 #define KFC_ASV_GRP_NR			(16)
-#define KFC_MAX_VOLT			(1225000)
+#define KFC_MAX_VOLT			(1350000)
 #define G3D_ASV_GRP_NR			(16)
 #define G3D_MAX_VOLT			(1187500)
 #define MIF_ASV_GRP_NR			(16)
