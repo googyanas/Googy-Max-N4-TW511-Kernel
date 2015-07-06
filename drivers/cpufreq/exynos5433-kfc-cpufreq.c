@@ -138,9 +138,9 @@ static int exynos5433_bus_table_CA7[CPUFREQ_LEVEL_END_CA7] = {
 	413000,		/* 700 MHz */
 	413000,		/* 600 MHz */
 	413000,		/* 500 MHz */
-	413000,		/* 400 MHz */
-	413000,		/* 300 MHz */
-	413000,		/* 200 MHz */
+	0,		/* 400 MHz */
+	0,		/* 300 MHz */
+	0,		/* 200 MHz */
 };
 
 static void exynos5433_set_clkdiv_CA7(unsigned int div_index)
@@ -307,7 +307,7 @@ static void __init set_volt_table_CA7(void)
 				exynos5433_abb_table_CA7[i]);
 	}
 
-	max_support_idx_CA7 = L5;	/* 1.5GHz */
+	max_support_idx_CA7 = L2;	/* 1.8GHz */
 	min_support_idx_CA7 = L18;	/* 200MHz */
 	pr_info("CPUFREQ of CA7 max_freq : L%d %u khz\n", max_support_idx_CA7,
 		exynos5433_freq_table_CA7[max_support_idx_CA7].frequency);
